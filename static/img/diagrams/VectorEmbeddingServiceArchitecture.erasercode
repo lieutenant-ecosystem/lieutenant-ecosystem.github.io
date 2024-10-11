@@ -1,0 +1,12 @@
+typeface mono
+colorMode outline
+styleMode plain
+
+External API [icon: code]
+Lieutenant [icon: server]{
+  Internal System [icon: server]
+  Vector Embedding Service [icon: docker]
+}
+
+Internal System > Vector Embedding Service
+Vector Embedding Service --> External API: Optional

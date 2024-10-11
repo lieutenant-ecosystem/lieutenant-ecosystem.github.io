@@ -1,0 +1,19 @@
+typeface mono
+colorMode outline
+styleMode plain
+
+API 1[icon: code]
+API 2[icon: code]
+API 3[icon: code]
+
+Lieutenant{
+  Database Management Service [icon: docker]
+  Vector Embedding Service [icon: docker]
+  Vector Database [icon: brain]
+  Non-Relational Database [icon: database]
+ }
+
+Database Management Service > API 1, API 2, API 3
+Database Management Service > Vector Database
+Database Management Service > Vector Embedding Service
+Database Management Service > Non-Relational Database

@@ -1,0 +1,30 @@
+typeface mono
+colorMode outline
+styleMode plain
+
+Users [icon: users]
+External System [icon: server]
+External API [icon: code]
+
+Lieutenant[icon: server]{
+  Open WebUI [icon: monitor]
+  Sergeant Service [icon: docker]
+  Relational Database [icon: database]
+  Non-Relational Database [icon: database]
+  Vector Database [icon: brain]
+  Database Management Service [icon: docker]
+  Vector Embedding Service [icon: docker]
+}
+
+Users > Open WebUI
+Open WebUI > Sergeant Service
+Open WebUI > Relational Database
+Sergeant Service > Vector Database
+Database Management Service > Vector Database
+Sergeant Service > External API
+Database Management Service > External API
+External System > Sergeant Service
+Database Management Service > Vector Embedding Service
+Vector Embedding Service --> External API: Optional
+Sergeant Service > Non-Relational Database
+Database Management Service > Non-Relational Database

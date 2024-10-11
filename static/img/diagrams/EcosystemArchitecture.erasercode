@@ -1,0 +1,22 @@
+typeface mono
+colorMode outline
+styleMode plain
+
+Users [icon: users]
+ZTNAP [icon: cloudflare, label: "Zero Trust Network Access Provider"]
+External System [icon: server]
+External API [icon: server]
+Search Engine [icon: search]
+VPN [icon: network, label: "Private Network"]{
+  Lieutenant [icon: server]
+  Internal System [icon: server]
+  Internal API [icon: server]
+}
+
+Users > ZTNAP
+External System > ZTNAP
+ZTNAP --> Lieutenant: Secure Tunnel
+Internal System > Lieutenant
+Lieutenant > Internal API
+Lieutenant > External API
+Lieutenant > Search Engine

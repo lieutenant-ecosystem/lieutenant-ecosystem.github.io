@@ -1,0 +1,25 @@
+typeface mono
+colorMode outline
+styleMode plain
+
+External System [icon: server]
+Vector Database [icon: brain]
+Non-Relational Database [icon: database]
+Internet [icon: network]
+
+Sergeant Service[icon: docker]{
+  Main Controller [icon: controller]
+
+  Sergeants [icon: folder]{
+    Long-Term Memory [icon: python]
+    Search Engine [icon: python]
+    Sergeant 3 [icon: python, color: pastel]
+    Sergeant 4 [icon: python]
+  }
+}
+
+Main Controller > Sergeants
+Sergeants > Internet
+Sergeants > Vector Database
+External System > Main Controller
+Sergeant Service > Non-Relational Database

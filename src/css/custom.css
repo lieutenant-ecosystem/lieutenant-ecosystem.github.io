@@ -1,0 +1,38 @@
+@import url('https://fonts.googleapis.com/css2?family=Lato:wght@100;400&display=swap');
+
+/**
+ * Any CSS included here will be global. The classic template
+ * bundles Infima by default. Infima is a CSS framework designed to
+ * work well for content-centric websites.
+ */
+
+/* You can override the default Infima variables here. */
+:root {
+  --ifm-color-primary: #2554a0;
+  --ifm-color-primary-dark: #214c90;
+  --ifm-color-primary-darker: #1f4788;
+  --ifm-color-primary-darkest: #1a3b70;
+  --ifm-color-primary-light: #295cb0;
+  --ifm-color-primary-lighter: #2b61b8;
+  --ifm-color-primary-lightest: #316dcf;
+}
+
+/* For readability concerns, you should choose a lighter palette in dark mode. */
+[data-theme='dark'] {
+  --ifm-color-primary: #2554a0;
+  --ifm-color-primary-dark: #214c90;
+  --ifm-color-primary-darker: #1f4788;
+  --ifm-color-primary-darkest: #1a3b70;
+  --ifm-color-primary-light: #295cb0;
+  --ifm-color-primary-lighter: #2b61b8;
+  --ifm-color-primary-lightest: #316dcf;
+  --docusaurus-highlighted-code-line-bg: rgba(0, 0, 0, 0.3);
+}
+
+body {
+  font-family: 'Lato', sans-serif;
+}
+
+h1, h2, h3, h4, h5, h6 {
+  font-family: 'Lato', sans-serif;
+}
