@@ -1,4 +1,4 @@
 {
-  "label": "Infrastructure",
-  "collapsible": true
+  "position": 6,
+  "link": {"type":  "doc", "id":  "home"}
 }
