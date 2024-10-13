@@ -8,8 +8,7 @@ version: '3.8'
 services:
 
   open-webui:
-    image: ghcr.io/open-webui/open-webui:main
-    container_name: open-webui
+    image: ghcr.io/open-webui/open-webui:latest
     ports:
       - "8080:8080"
     volumes:
@@ -23,13 +22,12 @@ services:
       - MICROSOFT_CLIENT_ID=${MICROSOFT_CLIENT_ID}
       - MICROSOFT_CLIENT_SECRET=${MICROSOFT_CLIENT_SECRET}
       - MICROSOFT_CLIENT_TENANT_ID=${MICROSOFT_CLIENT_TENANT_ID}
-      - DATABASE_URL=postgresql://openwebui:unsecuredpassword@db:5432/openwebui
+      - DATABASE_URL=postgresql://openwebui:unsecuredpassword@relational_database:5432/openwebui
     depends_on:
-      - db
+      - relational_database
 
-  db:
+  relational_database:
     image: postgres:latest
-    container_name: relational_database
     environment:
       POSTGRES_DB: openwebui
       POSTGRES_USER: openwebui
