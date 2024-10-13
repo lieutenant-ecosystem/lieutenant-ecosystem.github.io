@@ -1,0 +1,30 @@
+typeface mono
+colorMode outline
+styleMode plain
+direction: right
+
+User Message[shape: parallelogram]
+Retrieve all Long-Term Memory Segments[shape: cylinder, icon: database]
+Retrieve the configuration NUMBER_OF_MEMORY_SEGMENTS_TO_ASSESS[shape: cylinder, icon: database]
+Remember or recall information?[shape: diamond]
+LLM Message[shape: parallelogram]
+
+Remember {
+  Use a vector search to determine Memory Segments to amend
+  Amend all the Memory Segments
+  Save the Memory Segment(s)[shape: cylinder, icon: database]
+  ReplySaved[label: "Reply with 'The memory has been successfully saved.'"]
+}
+
+Recall {
+  Use a vector search to determine the Memory Segments to use as reference
+  Use the Memory Segments are reference to answer the User Message
+}
+
+Retrieve all Long-Term Memory Segments, Retrieve the configuration NUMBER_OF_MEMORY_SEGMENTS_TO_ASSESS, User Message > Remember or recall information?
+
+Remember or recall information? > Use a vector search to determine Memory Segments to amend: Remember
+Use a vector search to determine Memory Segments to amend > Amend all the Memory Segments > Save the Memory Segment(s) > ReplySaved > LLM Message
+
+Remember or recall information? > Use a vector search to determine the Memory Segments to use as reference: Recall
+Use a vector search to determine the Memory Segments to use as reference > Use the Memory Segments are reference to answer the User Message > LLM Message

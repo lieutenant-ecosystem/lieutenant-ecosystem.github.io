@@ -1,0 +1,12 @@
+typeface mono
+colorMode outline
+styleMode plain
+
+Lieutenant[icon: server]{
+  Main Controller[icon: controller]
+  Search Engine Sergeant[icon: python]
+  Non-Relatonal Database[icon: database]
+}
+
+Main Controller > Search Engine Sergeant
+Search Engine Sergeant > Non-Relatonal Database
