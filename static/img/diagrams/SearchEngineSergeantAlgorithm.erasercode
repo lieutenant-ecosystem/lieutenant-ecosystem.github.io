@@ -1,0 +1,6 @@
+typeface mono
+colorMode outline
+styleMode plain
+direction: right
+
+User Message[shape: parallelogram] > Create a search query > Get the list of websites from a search engine > Search Engine[shape: oval, icon: search] > Concurrently retrieve the content from each website > Retrieve the configuration for the number of relevant search results to refer[shape: cylinder, icon: database] > Retrieve the most relevant content using a vector search > Send the User Message with the search results to the LLM > LLM Message[shape: parallelogram]
