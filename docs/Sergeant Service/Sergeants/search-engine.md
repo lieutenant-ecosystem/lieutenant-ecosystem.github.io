@@ -14,6 +14,6 @@ It conducts an internet search to find the latest information online, which it u
 
 ## Configurations
 
-| Key                                         | Description                                                        |
-|---------------------------------------------|--------------------------------------------------------------------|
-| `NUMBER_OF_SEARCH_ENGINE_RESULTS_TO_ASSESS` | The number of search engine results that will be used as reference |
+| Key                                         | Description                                                         | Default |
+|---------------------------------------------|---------------------------------------------------------------------|---------|
+| `NUMBER_OF_SEARCH_ENGINE_RESULTS_TO_ASSESS` | The number of search engine results that will be used as reference. | `3`     |
