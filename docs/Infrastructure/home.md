@@ -24,7 +24,7 @@ services:
       - MICROSOFT_CLIENT_TENANT_ID=${MICROSOFT_CLIENT_TENANT_ID}
       - DATABASE_URL=postgresql://openwebui:unsecuredpassword@relational_database:5432/openwebui
 
-      # Open WebUI specific configurations
+      # Open WebUI specific configurations (view https://docs.openwebui.com/getting-started/env-configuration/)
       - WEBUI_NAME=Open WebUI
       - ENABLE_OAUTH_SIGNUP=true
       - ENABLE_OLLAMA_API=false
