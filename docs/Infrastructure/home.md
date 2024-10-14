@@ -23,6 +23,19 @@ services:
       - MICROSOFT_CLIENT_SECRET=${MICROSOFT_CLIENT_SECRET}
       - MICROSOFT_CLIENT_TENANT_ID=${MICROSOFT_CLIENT_TENANT_ID}
       - DATABASE_URL=postgresql://openwebui:unsecuredpassword@relational_database:5432/openwebui
+
+      # Open WebUI specific configurations
+      - WEBUI_NAME=Open WebUI
+      - ENABLE_OAUTH_SIGNUP=true
+      - ENABLE_OLLAMA_API=false
+      - ENABLE_LOGIN_FORM=false
+      - ENABLE_RAG_WEB_SEARCH=true
+      - ENABLE_SEARCH_QUERY=true
+      - RAG_WEB_SEARCH_ENGINE=google_pse
+      - RAG_WEB_SEARCH_RESULT_COUNT=5
+      - RAG_EMBEDDING_ENGINE=openai
+      - RAG_EMBEDDING_MODEL=text-embedding-3-small
+
     depends_on:
       - relational_database
 
