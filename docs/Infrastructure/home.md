@@ -8,36 +8,22 @@ version: '3.8'
 services:
 
   open-webui:
-    image: ghcr.io/open-webui/open-webui:latest
+    image: ghcr.io/lieutenant-ecosystem/open-webui:${ENVIRONMENT}
+    restart: always
     ports:
       - "8080:8080"
-    volumes:
-      - open-webui:/app/backend/data
-    restart: always
+    depends_on:
+      - relational_database
+      - sergeant_service
     environment:
       - ENV=${ENV}
-      - OPENAI_API_KEY=${OPENAI_API_KEY}
       - GOOGLE_PSE_API_KEY=${GOOGLE_PSE_API_KEY}
       - GOOGLE_PSE_ENGINE_ID=${GOOGLE_PSE_ENGINE_ID}
       - MICROSOFT_CLIENT_ID=${MICROSOFT_CLIENT_ID}
       - MICROSOFT_CLIENT_SECRET=${MICROSOFT_CLIENT_SECRET}
       - MICROSOFT_CLIENT_TENANT_ID=${MICROSOFT_CLIENT_TENANT_ID}
+      - OPENAI_API_BASE_URL=http://sergeant_service:8000
       - DATABASE_URL=postgresql://openwebui:unsecuredpassword@relational_database:5432/openwebui
-
-      # Open WebUI specific configurations (view https://docs.openwebui.com/getting-started/env-configuration/)
-      - WEBUI_NAME=Open WebUI
-      - ENABLE_OAUTH_SIGNUP=true
-      - ENABLE_OLLAMA_API=false
-      - ENABLE_LOGIN_FORM=false
-      - ENABLE_RAG_WEB_SEARCH=true
-      - ENABLE_SEARCH_QUERY=true
-      - RAG_WEB_SEARCH_ENGINE=google_pse
-      - RAG_WEB_SEARCH_RESULT_COUNT=5
-      - RAG_EMBEDDING_ENGINE=openai
-      - RAG_EMBEDDING_MODEL=text-embedding-3-small
-
-    depends_on:
-      - relational_database
 
   relational_database:
     image: postgres:latest
@@ -50,8 +36,24 @@ services:
     ports:
       - "5432:5432"
 
+  sergeant_service:
+    image: ghcr.io/lieutenant-ecosystem/sergeant-service:${ENVIRONMENT}
+    ports:
+      - "8000:8000"
+    extra_hosts:
+      - "host.docker.internal:host-gateway"
+    environment:
+      - OPENAI_API_KEY=${OPENAI_API_KEY}
+
+  gateway:
+    image: cloudflare/cloudflared:latest
+    command: tunnel --no-autoupdate run --token ${CLOUDFLARE_TUNNEL_TOKEN}
+    network_mode: "host"
+    environment:
+      - CLOUDFLARE_TUNNEL_TOKEN=${CLOUDFLARE_TUNNEL_TOKEN}
+
+
 volumes:
-  open-webui:
   postgres_data:
 
 ```
