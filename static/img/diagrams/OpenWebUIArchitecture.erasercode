@@ -6,9 +6,9 @@ Users [icon: users]
 Lieutenant[icon: server]{
   Open WebUI [icon: monitor]
   Sergeant Service [icon: docker]
-  Relational Database [icon: database]
+  Database [icon: database]
 }
 
 Users > Open WebUI
 Open WebUI > Sergeant Service
-Open WebUI > Relational Database
+Open WebUI > Database
