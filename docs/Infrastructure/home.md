@@ -5,9 +5,9 @@
 1. Administrator access to an Ubuntu server
 2. [OpenAI API Key](https://platform.openai.com/)
 3. [Google Programmable Search Engine ID and API Key](https://developers.google.com/custom-search/v1/introduction#identify_your_application_to_google_with_api_key)
-   _(Optional)_
+   _(optional)_
 4. [Microsoft Entra ID OAuth credentials](https://learn.microsoft.com/en-us/power-apps/developer/data-platform/walkthrough-register-app-azure-active-directory#create-the-app-registration)
-   _(Optional)_
+   _(optional)_
 
 ## Deployment
 
