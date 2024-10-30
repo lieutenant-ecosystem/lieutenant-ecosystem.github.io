@@ -33,7 +33,7 @@ sudo usermod -aG docker $USER
 
 # Setup the docker-compose.yml file
 ENV_FILE=$HOME/.env
-curl -O https://raw.githubusercontent.com/lieutenant-ecosystem/lieutenant/refs/heads/production/docker-compose.yml
+curl -O https://raw.githubusercontent.com/lieutenant-ecosystem/lieutenant/refs/heads/main/docker-compose.yml
 sudo chown $USER:$USER $ENV_FILE
 sudo chown :docker $ENV_FILE
 sudo chmod 640 $ENV_FILE
