@@ -8,6 +8,7 @@
    _(optional)_
 4. [Microsoft Entra ID OAuth credentials](https://learn.microsoft.com/en-us/power-apps/developer/data-platform/walkthrough-register-app-azure-active-directory#create-the-app-registration)
    _(optional)_
+5. [Sentry DSN](https://docs.sentry.io/platforms/python/integrations/fastapi/) _(optional)_
 
 ## Deployment
 
@@ -50,6 +51,7 @@ $VENV_BIN/podman-compose up
 | `MICROSOFT_CLIENT_ID`        | `Microsoft Entra ID` Client ID              | <span class="material-symbols-outlined">radio_button_unchecked</span> |
 | `MICROSOFT_CLIENT_SECRET`    | `Microsoft Entra ID` Client Secret          | <span class="material-symbols-outlined">radio_button_unchecked</span> |
 | `MICROSOFT_CLIENT_TENANT_ID` | `Microsoft Entra ID` Tenant ID              | <span class="material-symbols-outlined">radio_button_unchecked</span> |
+| `SENTRY_DSN`                 | The `Sentry` DSN                            | <span class="material-symbols-outlined">radio_button_unchecked</span> |
 
 :::tip
 
