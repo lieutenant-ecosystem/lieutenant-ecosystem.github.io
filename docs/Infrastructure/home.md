@@ -43,6 +43,33 @@ sudo chmod 755 $HOME
 sudo docker-compose --env-file $HOME/.env up -d
 ```
 
+```shell
+#!/bin/bash
+
+WORKING_DIR=$HOME/app
+VENV_BIN=$WORKING_DIR/.venv/bin
+
+# Install dependencies
+sudo apt update
+sudo apt install -y podman python3 python3-pip python3-venv curl
+
+# Start Podman as a rootless service using port 2375 as the API socket
+podman system service --time=0 tcp:127.0.0.1:2375 &
+export DOCKER_HOST="tcp://127.0.0.1:2375"
+
+# Go to the working directory
+mkdir -p $WORKING_DIR
+cd $WORKING_DIR
+
+# Install Podman Compose
+python3 -m venv .venv
+$VENV_BIN/pip install podman-compose
+
+# Run the cluster (this assumes that you already have a .env file next to the compose.yml)
+curl -O https://raw.githubusercontent.com/lieutenant-ecosystem/lieutenant/refs/heads/main/compose.yml
+$VENV_BIN/podman-compose up
+```
+
 ## Configuration Environmental Variables
 
 | Key                          | Description                                 | Mandatory                                                             |
