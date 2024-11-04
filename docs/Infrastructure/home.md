@@ -12,35 +12,31 @@
 ## Deployment
 
 Execute the following script on an `Ubuntu` server:
-
 ```shell
 #!/bin/bash
 
+WORKING_DIR=$HOME/app
+VENV_BIN=$WORKING_DIR/.venv/bin
+
+# Install dependencies
 sudo apt update
-sudo apt install -y ca-certificates curl gnupg lsb-release
-sudo snap install docker
+sudo apt install -y podman python3 python3-pip python3-venv curl
 
-# Set up Docker prerequisites
-sudo mkdir -p /etc/apt/keyrings
-curl -fsSL https://download.docker.com/linux/ubuntu/gpg | sudo gpg --dearmor -o /etc/apt/keyrings/docker.gpg
-echo "deb [arch=$(dpkg --print-architecture) signed-by=/etc/apt/keyrings/docker.gpg] https://download.docker.com/linux/ubuntu $(lsb_release -cs) stable" | sudo tee /etc/apt/sources.list.d/docker.list > /dev/null
-sudo apt update
+# Start Podman as a rootless service using port 2375 as the API socket
+podman system service --time=0 tcp:127.0.0.1:2375 &
+export DOCKER_HOST="tcp://127.0.0.1:2375"
 
-# Install Docker
-sudo apt -y install docker-ce docker-ce-cli containerd.io docker-buildx-plugin docker-compose
-sudo groupadd docker
-sudo usermod -aG docker $USER
+# Go to the working directory
+mkdir -p $WORKING_DIR
+cd $WORKING_DIR
 
-# Setup the docker-compose.yml file
-ENV_FILE=$HOME/.env
-curl -O https://raw.githubusercontent.com/lieutenant-ecosystem/lieutenant/refs/heads/main/docker-compose.yml
-sudo chown $USER:$USER $ENV_FILE
-sudo chown :docker $ENV_FILE
-sudo chmod 640 $ENV_FILE
-sudo chmod 755 $HOME
+# Install Podman Compose
+python3 -m venv .venv
+$VENV_BIN/pip install podman-compose
 
-# Start Lieutenant
-sudo docker-compose --env-file $HOME/.env up -d
+# Run the cluster (this assumes that you already have a .env file next to the compose.yml)
+curl -O https://raw.githubusercontent.com/lieutenant-ecosystem/lieutenant/refs/heads/main/compose.yml
+$VENV_BIN/podman-compose up
 ```
 
 ```shell
