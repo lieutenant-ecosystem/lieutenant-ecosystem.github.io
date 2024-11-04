@@ -53,7 +53,7 @@ $VENV_BIN/podman-compose up
 
 :::tip
 
-Use a `.env` file located in the same directory as the `docker-compose.yml` file.
+Use an `.env` file located in the same directory as the `compose.yml` file.
 
 :::
 
