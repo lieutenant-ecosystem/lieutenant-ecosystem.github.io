@@ -36,5 +36,5 @@ sudo apt update && sudo apt full-upgrade -y
 sudo snap install docker
 
 # Deploy the cluster
-curl -s https://raw.githubusercontent.com/lieutenant-ecosystem/lieutenant/refs/heads/main/compose.yml |  sudo -E docker-compose -f - up -d
+curl -s https://raw.githubusercontent.com/lieutenant-ecosystem/lieutenant/refs/heads/main/compose.yml | sudo -E docker-compose -f - up -d
 ```
