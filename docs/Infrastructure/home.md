@@ -17,6 +17,8 @@
 | `ENVIRONMENT`                | Either `latest`, `beta` or `dev`                                                          | <span class="material-symbols-outlined">check_circle</span>           |
 | `OPENAI_API_KEY`             | `OpenAI` API Key                                                                          | <span class="material-symbols-outlined">check_circle</span>           |
 | `DATABASE_URL`               | The SQLAlchemy database URL ([guide](https://github.com/lieutenant-ecosystem/lieutenant)) | <span class="material-symbols-outlined">radio_button_unchecked</span> |
+| `VECTOR_EMBEDDING_BASE_URL`  | The `OpenAI` compatible vector embedding service's URL                                    | <span class="material-symbols-outlined">radio_button_unchecked</span> |
+| `VECTOR_EMBEDDING_API_KEY`   | The vector embedding service's API Key                                                    | <span class="material-symbols-outlined">radio_button_unchecked</span> |
 | `GOOGLE_PSE_API_KEY`         | `Google Programmable Search Engine` API Key                                               | <span class="material-symbols-outlined">radio_button_unchecked</span> |
 | `GOOGLE_PSE_ENGINE_ID`       | `Google Programmable Search Engine` ID                                                    | <span class="material-symbols-outlined">radio_button_unchecked</span> |
 | `MICROSOFT_CLIENT_ID`        | `Microsoft Entra ID` Client ID                                                            | <span class="material-symbols-outlined">radio_button_unchecked</span> |
