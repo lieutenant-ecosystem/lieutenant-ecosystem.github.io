@@ -1,6 +1,6 @@
-# Database Management Service
+# Intelligence Service
 ## What is it?
-Periodically updates the vector indices to maintain the accuracy of the `Vector Database`.
+`Intelligence Officers` periodically update the vector indices to maintain the accuracy of the `Vector Database`.
 
 ## Architecture
 ![Database Management Service](/img/diagrams/DatabaseManagementServiceArchitecture.svg)
