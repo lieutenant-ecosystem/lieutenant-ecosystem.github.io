@@ -10,7 +10,7 @@ Lieutenant[icon: server]{
   Open WebUI [icon: monitor]
   Sergeant Service [icon: docker]
   Database [icon: database]
-  Database Management Service [icon: docker]
+  Intelligence Service [icon: docker]
   Vector Embedding Service [icon: docker]
 }
 
@@ -18,11 +18,12 @@ Users > Open WebUI
 Open WebUI > Sergeant Service
 Open WebUI > Database
 Sergeant Service > Database
-Database Management Service > Database
+Intelligence Service > Database
 Sergeant Service > External API
-Database Management Service > External API
+Intelligence Service > External API
 External System > Sergeant Service
-Database Management Service > Vector Embedding Service
+Intelligence Service > Vector Embedding Service
 Vector Embedding Service --> External API: Optional
 Sergeant Service > Database
-Database Management Service > Database
+Open WebUI > Vector Embedding Service
+Intelligence Service > Database

@@ -6,9 +6,11 @@ Users [icon: users]
 Lieutenant[icon: server]{
   Open WebUI [icon: monitor]
   Sergeant Service [icon: docker]
+  Vector Embedding Service [icon: docker]
   Database [icon: database]
 }
 
 Users > Open WebUI
 Open WebUI > Sergeant Service
+Open WebUI > Vector Embedding Service
 Open WebUI > Database

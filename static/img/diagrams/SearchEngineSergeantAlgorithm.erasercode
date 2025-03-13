@@ -1,9 +1,0 @@
-typeface mono
-colorMode outline
-styleMode plain
-direction: right
-
-User Message[shape: parallelogram]
-Retrieve the configuration NUMBER_OF_SEARCH_ENGINE_RESULTS_TO_ASSESS[shape: cylinder, icon: database]
-
-Retrieve the configuration NUMBER_OF_SEARCH_ENGINE_RESULTS_TO_ASSESS, User Message > Create a search query > Get the list of websites from a search engine[shape: oval, icon: search] > Concurrently retrieve the content from each website > Retrieve the most relevant content using a vector search > Send the User Message with the search results to the LLM > LLM Message[shape: parallelogram]

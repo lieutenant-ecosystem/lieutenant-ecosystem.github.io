@@ -2,9 +2,6 @@
 ## What is it?
 [Open WebUI](https://openwebui.com/) is the main user-interface for interacting with Lieutenant.
 
-Lieutenant will use the vanilla installation with the following environmental variables:
-1. `OPENAI_API_BASE_URL`- The base URL of the `Sergeant Service` container.
-2. `DATABASE_URL`- The URI of the `Relational Database` ([more info](https://docs.peewee-orm.com/en/latest/peewee/playhouse.html#db-url)).
 
 ## Architecture
 ![Ecosystem Architecture](/img/diagrams/OpenWebUIArchitecture.svg)
