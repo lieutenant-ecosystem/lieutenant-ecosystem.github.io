@@ -30,12 +30,6 @@
 
 <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20,300,0,0" />
 
-### How to deploy with just OpenAI?
-
-Set the following environmental variables:
-
-1. `OPENAI_API_KEY`
-
 ### How to deploy with an OpenAI compatible LLM endpoint?
 
 Set the following environmental variables:
@@ -66,9 +60,23 @@ Set the `ENABLE_LOGIN_FORM` environment variable to `True` in the `Open WebUI` c
 
 :::
 
+<details>
+<summary>How to use only OpenAI:</summary>
+1. Set `OPENAI_COMPATIBLE_API_BASE_URL` and `VECTOR_EMBEDDING_BASE_URL` as 'https://api.openai.com/v1'.  
+2. Set `OPENAI_COMPATIBLE_API_KEY` and `VECTOR_EMBEDDING_API_KEY` as your OpenAI API Key.
+3. Optionally, set `VECTOR_EMBEDDING_SERVICE_DEFAULT_MODEL`. The default is `text-embedding-3-small`,
+</details>
+
 ## Deployment
 
-After setting up the environment variables, execute the following command:
+### Prerequisites
+
+1. Set up the respective environmental variables.
+2. Set up the configuration files in `$HOME/app_data/$SERVICE_FOLDER_NAME/data`.
+    1. As defaults, you can copy the `/data` folders in the repository.
+    2. `$SERVICE_FOLDE_NAME` is the parent folder name of the `/data` folder in the repository _(e.g: `sergeant_service`)_.
+
+### Command to Deploy
 
 ```shell
 sudo curl -sSL "https://raw.githubusercontent.com/lieutenant-ecosystem/lieutenant/refs/heads/${ENVIRONMENT/latest/main}/deploy.sh" | bash -s ${ENVIRONMENT/latest/main}
