@@ -62,7 +62,7 @@ Set the `ENABLE_LOGIN_FORM` environment variable to `True` in the `Open WebUI` c
 
 <details>
 <summary>How to use only OpenAI:</summary>
-1. Set `OPENAI_COMPATIBLE_API_BASE_URL` and `VECTOR_EMBEDDING_BASE_URL` as 'https://api.openai.com/v1'.  
+1. Set `OPENAI_COMPATIBLE_API_BASE_URL` and `VECTOR_EMBEDDING_BASE_URL` as `https://api.openai.com/v1`.  
 2. Set `OPENAI_COMPATIBLE_API_KEY` and `VECTOR_EMBEDDING_API_KEY` as your OpenAI API Key.
 3. Optionally, set `VECTOR_EMBEDDING_SERVICE_DEFAULT_MODEL`. The default is `text-embedding-3-small`,
 </details>
