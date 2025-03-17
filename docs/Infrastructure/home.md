@@ -78,6 +78,13 @@ Set the `ENABLE_LOGIN_FORM` environment variable to `True` in the `Open WebUI` c
 
 ### Command to Deploy
 
+#### Kubernetes
 ```shell
 sudo curl -sSL "https://raw.githubusercontent.com/lieutenant-ecosystem/lieutenant/refs/heads/${ENVIRONMENT/latest/main}/deploy.sh" | bash -s ${ENVIRONMENT/latest/main}
+```
+
+#### Docker Compose
+
+```shell
+sudo curl -sSL "https://raw.githubusercontent.com/lieutenant-ecosystem/lieutenant/refs/heads/${ENVIRONMENT/latest/main}/infrastructure/docker/deploy.sh" | bash -s ${ENVIRONMENT/latest/main}
 ```
