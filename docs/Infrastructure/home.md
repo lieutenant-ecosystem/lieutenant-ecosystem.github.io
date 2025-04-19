@@ -14,9 +14,12 @@
 
 | Key                                      | Description                                                                                                                                 | Mandatory                                                             |
 |------------------------------------------|---------------------------------------------------------------------------------------------------------------------------------------------|-----------------------------------------------------------------------|
-| `VECTOR_EMBEDDING_SERVICE_DATABASE_URL`  | The _asynchronous_ SQLAlchemy database URL ([guide](https://github.com/lieutenant-ecosystem/lieutenant)) for the `Vector Embedding Service` | <span class="material-symbols-outlined">check_circle</span>           |
-| `ENVIRONMENT`                            | Either `latest`, `beta` or `dev`                                                                                                            | <span class="material-symbols-outlined">radio_button_unchecked</span> |
+| `ENVIRONMENT`                            | Either `latest`, `beta` or `dev`                                                                                                            | <span class="material-symbols-outlined">check_circle</span>           |
+| `SERGEANT_SERVICE_DATA_DIR`              | The `Sergant Service` data directory                                                                                                        | <span class="material-symbols-outlined">check_circle</span>           |
+| `VECTOR_EMBEDDING_SERVICE_DATA_DIR`      | The `Vector Embedding Service` data directory                                                                                               | <span class="material-symbols-outlined">check_circle</span>           |
+| `INTELLIGENCE_SERVICE_DATA_DIR`          | The `Intelligence Service` data directory                                                                                                   | <span class="material-symbols-outlined">check_circle</span>           |
 | `DATABASE_URL`                           | The SQLAlchemy database URL ([guide](https://github.com/lieutenant-ecosystem/lieutenant)) for `Open WebUI`                                  | <span class="material-symbols-outlined">radio_button_unchecked</span> |
+| `VECTOR_EMBEDDING_SERVICE_DATABASE_URL`  | The _asynchronous_ SQLAlchemy database URL ([guide](https://github.com/lieutenant-ecosystem/lieutenant)) for the `Vector Embedding Service` | <span class="material-symbols-outlined">radio_button_unchecked</span> |
 | `OPENAI_API_KEY`                         | `OpenAI` API Key                                                                                                                            | <span class="material-symbols-outlined">radio_button_unchecked</span> |
 | `OPENAI_COMPATIBLE_API_BASE_URL`         | The custom `OpenAI` API compatible endpoint                                                                                                 | <span class="material-symbols-outlined">radio_button_unchecked</span> |
 | `OPENAI_COMPATIBLE_API_KEY`              | The custom `OpenAI` API compatible endpoint's API Key                                                                                       | <span class="material-symbols-outlined">radio_button_unchecked</span> |
@@ -29,6 +32,12 @@
 | `SENTRY_DSN`                             | The `Sentry` DSN                                                                                                                            | <span class="material-symbols-outlined">radio_button_unchecked</span> |
 
 <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20,300,0,0" />
+
+### How to deploy with an OpenAI?
+
+Set the following environmental variables:
+
+1. `OPENAI_API_KEY`
 
 ### How to deploy with an OpenAI compatible LLM endpoint?
 
@@ -55,17 +64,10 @@ Set the following environmental variables:
 
 :::tip
 
-`Microsoft Entra ID` authentication is enabled by default for the best security, out of the box.
+`Microsoft Entra ID` authentication is enabled by default out of the box, for the best security.
 Set the `ENABLE_LOGIN_FORM` environment variable to `True` in the `Open WebUI` container to activate the default authentication.
 
 :::
-
-<details>
-<summary>How to use only OpenAI:</summary>
-1. Set `OPENAI_COMPATIBLE_API_BASE_URL` and `VECTOR_EMBEDDING_BASE_URL` as `https://api.openai.com/v1`.  
-2. Set `OPENAI_COMPATIBLE_API_KEY` and `VECTOR_EMBEDDING_API_KEY` as your OpenAI API Key.
-3. Optionally, set `VECTOR_EMBEDDING_SERVICE_DEFAULT_MODEL`. The default is `text-embedding-3-small`,
-</details>
 
 ## Deployment
 
@@ -74,11 +76,12 @@ Set the `ENABLE_LOGIN_FORM` environment variable to `True` in the `Open WebUI` c
 1. Set up the respective environmental variables.
 2. Set up the configuration files in `$HOME/app_data/$SERVICE_FOLDER_NAME/data`.
     1. As defaults, you can copy the `/data` folders in the repository.
-    2. `$SERVICE_FOLDE_NAME` is the parent folder name of the `/data` folder in the repository _(e.g: `sergeant_service`)_.
+   2. `$SERVICE_FOLDER_NAME` is the parent folder name of the `/data` folder in the repository _(e.g: `sergeant_service`)_.
 
 ### Command to Deploy
 
 #### Kubernetes
+
 ```shell
 sudo curl -sSL "https://raw.githubusercontent.com/lieutenant-ecosystem/lieutenant/refs/heads/${ENVIRONMENT/latest/main}/deploy.sh" | bash -s ${ENVIRONMENT/latest/main}
 ```
